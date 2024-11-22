@@ -17,8 +17,6 @@ public class MoveInGameMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textLevelInfo; // Texto del nombre del nivel
 
     [Header("BlockButtons")]
-    [SerializeField] private GameObject imageRBlock; // Botón de siguiente
-    [SerializeField] private GameObject imageLBlock; // Botón de anterior
     [SerializeField] private GameObject playButton; // Botón de jugar
 
     private Animator animator;
@@ -40,21 +38,21 @@ public class MoveInGameMenu : MonoBehaviour
         {
             MoveToPrevious();
         }
-
-        UpdateBlockButtons();
     }
 
     public void MoveToNext()
     {
-        if(completedLevels[moveStepIndex+1] > 0){
-            if (moveStepIndex < moveSteps.Length && !isMoving){
-                int steps = moveSteps[moveStepIndex];
-                moveStepIndex++;
-                MoveToTarget(currentLevelIndex + steps);
-                PutTextLevelInfo();
+        if(moveStepIndex+1 <= moveSteps.Length){
+            if(completedLevels[moveStepIndex+1] > 0){
+                if (moveStepIndex < moveSteps.Length && !isMoving){
+                    int steps = moveSteps[moveStepIndex];
+                    moveStepIndex++;
+                    MoveToTarget(currentLevelIndex + steps);
+                    PutTextLevelInfo();
+                }
+            }else{
+                GameObject text = Instantiate(textPrefab, textParent);
             }
-        }else{
-            GameObject text = Instantiate(textPrefab, textParent);
         }
         
     }
@@ -108,26 +106,6 @@ public class MoveInGameMenu : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }else{
             gameObject.GetComponent<SpriteRenderer>().flipX = true;   
-        }
-    }
-
-    private void UpdateBlockButtons(){
-        if(completedLevels[moveStepIndex+1] <= 0 || moveStepIndex == moveSteps.Length){
-            imageRBlock.SetActive(true);
-        }else{
-            imageRBlock.SetActive(false);
-        }
-
-        if(moveStepIndex == 0){
-            imageLBlock.SetActive(true);
-        }else{
-            imageLBlock.SetActive(false);
-        }
-
-        if(levelsName[moveStepIndex].Equals("")){
-            ChangePlayButton(false);
-        }else{
-            ChangePlayButton(true);
         }
     }
 
