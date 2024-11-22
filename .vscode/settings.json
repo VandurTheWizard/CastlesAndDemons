@@ -56,6 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "CastlesAndDemons.sln"
     "dotnet.defaultSolution": "TowerAndBullets.sln"
 }
