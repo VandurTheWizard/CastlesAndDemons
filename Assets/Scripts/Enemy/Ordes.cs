@@ -18,6 +18,12 @@ public class Ordes : MonoBehaviour
 
     void Start()
     {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        if(spriteRenderer != null)
+        {
+            spriteRenderer.enabled = false;
+        }
+        
         spawnPoint = GetComponent<Transform>();
         StartCoroutine(SpawnHordes());
     }

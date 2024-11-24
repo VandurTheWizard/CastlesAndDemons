@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2953879475750351440}
   - component: {fileID: 1130090212594617543}
   - component: {fileID: 7558163880810884255}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -225,9 +225,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
-  health: 5
-  expRequired: 4
+  expRequired: 10
+  expIncreasePerLevel: 1.5
   exp: 0
+  money: 30
+  textMoney: {fileID: 0}
+  bulletDamage: 1
+  shotCooldown: 1
+  deadScreen: {fileID: 5704036609969586314, guid: cedde09d9d160e34195ded74d6e299dd, type: 3}
   lifeBar: {fileID: 7795902701808517272}
 --- !u!114 &1130090212594617543
 MonoBehaviour:
@@ -570,7 +575,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4004860913340282569, guid: d24f05dea4963fb45b7b165b2930113a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

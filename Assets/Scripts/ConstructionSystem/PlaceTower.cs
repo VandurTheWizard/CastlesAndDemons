@@ -41,7 +41,6 @@ public class PlaceTower : MonoBehaviour
             // Cambia el color del SpriteRenderer según si se puede colocar o no
             shadowSpriteRenderer.color = canPlace ? Color.blue : Color.red;
             
-
             shadowInstance.transform.position = worldPosition;
     
             canPlace = shadowInstance.GetComponent<ControlTrigers>().CanPlace();

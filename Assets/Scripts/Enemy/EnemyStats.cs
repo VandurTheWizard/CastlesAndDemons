@@ -4,7 +4,7 @@ public class EnemyStats : MonoBehaviour
 {
     [SerializeField] private int health = 3;
     [SerializeField] private int damage = 1;
-    [SerializeField] private float porcentDrop = 0.5f;
+    [SerializeField] private float porcentDrop = 0.1f;
     [SerializeField] private GameObject drop;
     [SerializeField] private float expForPlayer;
 
