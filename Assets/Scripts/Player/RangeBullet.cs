@@ -3,6 +3,7 @@ using UnityEngine;
 public class RangeBullet : MonoBehaviour
 {
     [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private int large = 10;
     private bool enemyDetected;
 
     public bool EnemyDetected
@@ -13,7 +14,7 @@ public class RangeBullet : MonoBehaviour
     void Update()
     {
         RaycastHit2D hit;
-        Vector2 forward = transform.TransformDirection(Vector2.right) * 5;
+        Vector2 forward = transform.TransformDirection(Vector2.right) * large;
 
         // Realiza el Raycast en 2D desde la posición actual hacia adelante
         hit = Physics2D.Raycast(transform.position, forward, 10, enemyLayer);

@@ -12,22 +12,27 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float expRequired = 10;
     [SerializeField] private float expIncreasePerLevel = 1.5f;
     [SerializeField] private float exp;
+    [SerializeField] private int level = 1;
     [Header("Money")]   
     [SerializeField] private float money;
     [SerializeField] private TextMeshProUGUI textMoney;
     [Header("Shot")]
     [SerializeField] private float bulletDamage = 1f;
-    [SerializeField] private float shotCooldown = 2f;
+    [SerializeField] private float shotGunCooldown = 1f;
+    [SerializeField] private float shotBigGunCooldown = 3f;
+    [SerializeField] private GameObject bigGun;  
     [Header("UI")]
     [SerializeField] private GameObject deadScreen;
     [SerializeField] private GameObject lifeBar;
-    private int level = 1;
+    
 
     void Awake()
     {
         health = maxHealth;
         lifeBar.GetComponent<BarFunction>().UpdateBar(health, maxHealth);
         textMoney.text = money.ToString();
+        GetComponent<ShotBigGun>().enabled = false;
+        bigGun.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     public void LevelUp()
@@ -41,10 +46,22 @@ public class PlayerStats : MonoBehaviour
         expRequired *= expIncreasePerLevel;
         transform.GetChild(3).GetComponent<InfoText>().LevelUp();
         // Cooldown
-        if((shotCooldown - 0.1f) > 0.5f)
+        if((shotGunCooldown - 0.1f) > 0.3f)
         {
-            shotCooldown -= 0.1f;
-            gameObject.GetComponent<ShotGun>().SetShotCooldown(shotCooldown);
+            shotGunCooldown -= 0.1f;
+            gameObject.GetComponent<ShotGun>().SetShotCooldown(shotGunCooldown);
+        }
+        if(level >= 25){
+            if(!GetComponent<ShotBigGun>().enabled)
+            {
+                GetComponent<ShotBigGun>().enabled = true;
+                bigGun.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            if((shotBigGunCooldown - 0.1f) > 1.5f)
+            {
+                shotBigGunCooldown -= 0.1f;
+                gameObject.GetComponent<ShotBigGun>().SetShotCooldown(shotBigGunCooldown);
+            }
         }
     }
 
@@ -101,9 +118,14 @@ public class PlayerStats : MonoBehaviour
         set { money = value; }
     }
 
-    public float ShotCooldown
+    public float ShotGunCooldown
     {
-        get { return shotCooldown; }
+        get { return shotGunCooldown; }
+    }
+
+    public float ShotBigGunCooldown
+    {
+        get { return shotBigGunCooldown; }
     }
 
     

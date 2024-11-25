@@ -31,7 +31,7 @@ public class Orb : MonoBehaviour
     }
 
     private void RandomExp(){
-        value = Random.Range(1, 5) * player.GetComponent<PlayerStats>().GetLevel();
+        value = Random.Range(1, 5);
     }
 
     public void ToPlayer(){

@@ -7,12 +7,15 @@ public class GunRotation : MonoBehaviour
 {
     private Vector3 objetivo;
     private Camera camara;
-    private SpriteRenderer sprite;
+    private SpriteRenderer spriteGun;
+    private SpriteRenderer spriteBigGun;
 
     void Start(){
         camara = Camera.main;
-        Transform childObject = transform.Find("Gun");
-        sprite = childObject.GetComponent<SpriteRenderer>();
+        Transform childObjectGun = transform.Find("Gun");
+        spriteGun = childObjectGun.GetComponent<SpriteRenderer>();
+        Transform childObjectBigGun = transform.Find("BigGun");
+        spriteBigGun = childObjectBigGun.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -25,9 +28,11 @@ public class GunRotation : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, anguloGrados);
 
         if(anguloGrados > 90 || anguloGrados < -90){
-            sprite.flipY = true;
+            spriteGun.flipY = true;
+            spriteBigGun.flipY = true;
         }else{
-            sprite.flipY = false;
+            spriteGun.flipY = false;
+            spriteBigGun.flipY = false;
         }
     }
 }

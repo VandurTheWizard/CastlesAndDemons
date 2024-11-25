@@ -351,10 +351,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e352c9b4477734ba1ea46ab4c1080d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 1
-  attackDamage: 0
+  attackCooldown: 3
+  attackDamage: 1
   bulletPrefab: {fileID: 8841157508740084744, guid: cb2fa75b499dadb449f0f6d6581dc7d9, type: 3}
-  levelTower: 1
+  levelTower: 3
 --- !u!114 &2934386983196931719
 MonoBehaviour:
   m_ObjectHideFlags: 0

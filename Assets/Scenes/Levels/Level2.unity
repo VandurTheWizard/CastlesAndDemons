@@ -24385,6 +24385,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1103374263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8608763677040199466, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
+  m_PrefabInstance: {fileID: 1947364219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1112565275
 GameObject:
   m_ObjectHideFlags: 0
@@ -24549,6 +24554,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60299cc6f2e1b7c40af0f859dcd302ad, type: 3}
+--- !u!114 &1287748982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1933201086609339260, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
+  m_PrefabInstance: {fileID: 1947364219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51e8e221f8d6d74fa5ce2b67039f542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1444419909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58679,9 +58695,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1180377045294763673, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
-      propertyPath: enemyLayer.m_Bits
-      value: 264
+    - target: {fileID: 175447172464292032, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
+      propertyPath: large
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1522451602252071343, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58723,14 +58739,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1977402282684511038, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
+      propertyPath: dashSpeed
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977402282684511038, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
+      propertyPath: dashDuration
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953879475750351440, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
+      propertyPath: exp
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953879475750351440, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953879475750351440, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
+      propertyPath: bigGun
+      value: 
+      objectReference: {fileID: 1103374263}
     - target: {fileID: 2953879475750351440, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
       propertyPath: textMoney
       value: 
       objectReference: {fileID: 526854677}
-    - target: {fileID: 2953879475750351440, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
-      propertyPath: shotCooldown
-      value: 2
-      objectReference: {fileID: 0}
+    - target: {fileID: 6376481534595870048, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1870876656750283219, guid: d24f05dea4963fb45b7b165b2930113a, type: 3}
+    - target: {fileID: 7558163880810884255, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 1287748982}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
