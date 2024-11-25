@@ -155,7 +155,7 @@ MonoBehaviour:
     - {fileID: 4543526135903436072, guid: 71d70ca687a85754fa6509dc4cd7de90, type: 3}
     - {fileID: 7825589099046142716, guid: 4c34c400a016fa446afbcd863173379d, type: 3}
     spawnInterval: 2
-    duration: 60
+    duration: 180
 --- !u!212 &37579098
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -58679,6 +58679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1180377045294763673, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 264
+      objectReference: {fileID: 0}
     - target: {fileID: 1522451602252071343, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.7122359
@@ -58720,13 +58724,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2953879475750351440, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
-      propertyPath: money
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2953879475750351440, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
       propertyPath: textMoney
       value: 
       objectReference: {fileID: 526854677}
+    - target: {fileID: 2953879475750351440, guid: 31b5851042a00354a94eda416c0ad41b, type: 3}
+      propertyPath: shotCooldown
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
