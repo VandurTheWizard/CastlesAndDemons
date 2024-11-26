@@ -27,7 +27,6 @@ public class ShotGun : MonoBehaviour
         if(gun.EnemyDetected && canShot && bulletPrefab != null){
             Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             canShot = false;
-            Debug.Log("CoolDownShot" + shotCooldown);
             Invoke("nowCanShot", shotCooldown);
 
         }

@@ -38,6 +38,7 @@ public class Ordes : MonoBehaviour
             while (Time.time < endTime)
             {
                 SpawnEnemy(currentHorde);
+                
                 yield return new WaitForSeconds(currentHorde.spawnInterval);
             }
 

@@ -18,7 +18,6 @@ public class WinManager : MonoBehaviour
     public void HordeDefeated()
     {
         hordeNumber--;
-        Debug.Log("Faltan " + hordeNumber + " hordas");
         if (hordeNumber == 0)
         {
             ordeFinished = true;
@@ -27,11 +26,14 @@ public class WinManager : MonoBehaviour
 
     public void EnemySpawn(){
         enemyNumber ++;
+        Debug.Log("Enemies: " + enemyNumber);
     }
 
     public void EnemyDefeated(){
         enemyNumber --;
+        Debug.Log("Enemies: " + enemyNumber);
         if(enemyNumber == 0 && ordeFinished){
+            Debug.Log("You win");
             GetComponent<Canvas>().enabled = true;
         }
     }

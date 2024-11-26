@@ -32,7 +32,6 @@ public class ShotBigGun : MonoBehaviour
             bullet2.GetComponent<ShotgunBullet>().timeDestroy = 0.25f;
             bullet3.GetComponent<ShotgunBullet>().timeDestroy = 0.25f;
             canShot = false;
-            Debug.Log("CoolDownShot" + shotCooldown);
             Invoke("nowCanShot", shotCooldown);
 
         }
