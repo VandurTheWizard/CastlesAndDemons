@@ -43,17 +43,27 @@ public class Ordes : MonoBehaviour
 
             currentHordeIndex++;
         }
+        
+        // Si no hay más hordas, se activa el WinManager para indicar que se acabo esta orda
+        FindFirstObjectByType<WinManager>().HordeDefeated();
+
     }
 
     private void SpawnEnemy(Horde horde)
     {
-        int randomIndex = Random.Range(0, horde.enemyPrefabs.Length);
-        GameObject enemyPrefab = horde.enemyPrefabs[randomIndex];
-        GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
-        MoveEnemy moveEnemy = enemy.GetComponent<MoveEnemy>();
-        if (moveEnemy != null)
+        if (horde.enemyPrefabs.Length != 0)
         {
-            moveEnemy.SetTarget(horde.target);
+            int randomIndex = Random.Range(0, horde.enemyPrefabs.Length);
+            GameObject enemyPrefab = horde.enemyPrefabs[randomIndex];
+            GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+            MoveEnemy moveEnemy = enemy.GetComponent<MoveEnemy>();
+            if (moveEnemy != null)
+            {
+                moveEnemy.SetTarget(horde.target);
+            }
+        }else{
+            return;
         }
+        
     }
 }

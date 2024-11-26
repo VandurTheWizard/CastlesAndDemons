@@ -219,8 +219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  damage: 1
-  porcentDrop: 0.5
+  damage: 5
+  porcentDrop: 0.1
   drop: {fileID: 2943643696823835657, guid: dae4120a936cada41847c0cc2ec35151, type: 3}
   expForPlayer: 1
 --- !u!195 &2769505464878951359

@@ -12,6 +12,7 @@ TagManager:
   - Bullet
   - DefendObjetive
   - Orb
+  - Horde
   layers:
   - Default
   - TransparentFX
