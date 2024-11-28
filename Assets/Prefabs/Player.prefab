@@ -230,8 +230,8 @@ MonoBehaviour:
   expRequired: 10
   expIncreasePerLevel: 1.5
   exp: 9
-  level: 24
-  money: 30
+  level: 1
+  money: 0
   textMoney: {fileID: 0}
   bulletDamage: 1
   shotGunCooldown: 1

@@ -2218,7 +2218,7 @@ MonoBehaviour:
   - target: {fileID: 832299045}
     enemyPrefabs:
     - {fileID: 4543526135903436072, guid: 71d70ca687a85754fa6509dc4cd7de90, type: 3}
-    spawnInterval: 1
+    spawnInterval: 2
     duration: 10
 --- !u!4 &1200582047
 Transform:

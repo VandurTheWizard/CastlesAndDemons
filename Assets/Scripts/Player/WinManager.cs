@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class WinManager : MonoBehaviour
 {
-    private int hordeNumber = 0;
-    private bool ordeFinished = false;
-    private int enemyNumber = 0;
+    public int hordeNumber = 0;
+    public bool ordeFinished = false;
+    public int enemyNumber = 0;
 
 
     void Awake()
@@ -21,19 +21,19 @@ public class WinManager : MonoBehaviour
         if (hordeNumber == 0)
         {
             ordeFinished = true;
+            if(enemyNumber == 0){
+                GetComponent<Canvas>().enabled = true;
+            }
         }
     }
 
     public void EnemySpawn(){
         enemyNumber ++;
-        Debug.Log("Enemies: " + enemyNumber);
     }
 
     public void EnemyDefeated(){
         enemyNumber --;
-        Debug.Log("Enemies: " + enemyNumber);
         if(enemyNumber == 0 && ordeFinished){
-            Debug.Log("You win");
             GetComponent<Canvas>().enabled = true;
         }
     }

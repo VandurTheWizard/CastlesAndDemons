@@ -15,10 +15,12 @@ public class Ordes : MonoBehaviour
     private Transform spawnPoint; // Punto de generación de enemigos
     [SerializeField] private Horde[] hordes; // Array de hordas
     private int currentHordeIndex = 0; // Índice de la horda actual
+    private WinManager winManager;
 
     void Start()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        winManager = FindFirstObjectByType<WinManager>();
         if(spriteRenderer != null)
         {
             spriteRenderer.enabled = false;
@@ -38,6 +40,7 @@ public class Ordes : MonoBehaviour
             while (Time.time < endTime)
             {
                 SpawnEnemy(currentHorde);
+                winManager.EnemySpawn();
                 
                 yield return new WaitForSeconds(currentHorde.spawnInterval);
             }
@@ -46,7 +49,7 @@ public class Ordes : MonoBehaviour
         }
         
         // Si no hay más hordas, se activa el WinManager para indicar que se acabo esta orda
-        FindFirstObjectByType<WinManager>().HordeDefeated();
+        winManager.HordeDefeated();
 
     }
 
