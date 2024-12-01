@@ -1,12 +1,14 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class WinManager : MonoBehaviour
 {
     public int hordeNumber = 0;
     public bool ordeFinished = false;
     public int enemyNumber = 0;
+    public TextMeshProUGUI enemiesNumberText;
 
 
     void Awake()
@@ -29,10 +31,13 @@ public class WinManager : MonoBehaviour
 
     public void EnemySpawn(){
         enemyNumber ++;
+        updateEnemiesNumberText();
+;
     }
 
     public void EnemyDefeated(){
         enemyNumber --;
+        updateEnemiesNumberText();
         if(enemyNumber == 0 && ordeFinished){
             GetComponent<Canvas>().enabled = true;
         }
@@ -41,6 +46,10 @@ public class WinManager : MonoBehaviour
     public void ReturnToGameMenu(){
         // Cargar la escena del menú principal
         SceneManager.LoadScene("GameMenu");
+    }
+
+    private void updateEnemiesNumberText(){
+        enemiesNumberText.text = "Enemies: "+enemyNumber;
     }
 
     
